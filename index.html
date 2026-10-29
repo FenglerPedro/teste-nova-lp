@@ -3,33 +3,39 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080604">
 <title>Sua marca merece ser lembrada.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://i.imgur.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:dark;--ink:#080604;--paper:#f7f1e7;--orange:#f28a19;--orange-light:#ffad54;--sans:"DM Sans",Arial,sans-serif;--display:"Playfair Display","Bodoni MT",Georgia,serif}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--ink)}body{color:var(--paper);font-family:var(--sans)}
-.hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:100svh;overflow:hidden;background-color:var(--ink);background-image:linear-gradient(90deg,rgba(8,6,4,.98) 0%,rgba(8,6,4,.91) 26%,rgba(8,6,4,.48) 43%,rgba(8,6,4,.04) 70%),linear-gradient(0deg,rgba(8,6,4,.32),transparent 24%,transparent 78%,rgba(8,6,4,.18)),url("https://i.imgur.com/G1qk4dQ.jpeg");background-position:center,center,center center;background-size:cover;background-repeat:no-repeat}
+.hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:100svh;overflow:hidden;background:var(--ink)}
+.hero__image{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(8,6,4,.98) 0%,rgba(8,6,4,.91) 26%,rgba(8,6,4,.48) 43%,rgba(8,6,4,.04) 70%),linear-gradient(0deg,rgba(8,6,4,.32),transparent 24%,transparent 78%,rgba(8,6,4,.18))}
 .hero__content{width:min(100% - 11.5vw,1440px);margin-inline:auto;padding-block:clamp(3rem,7vh,6rem);position:relative;z-index:1}
 .eyebrow{margin:0 0 clamp(1.1rem,2.3vh,1.8rem);color:var(--orange-light);font-size:clamp(.72rem,1.22vw,1.05rem);font-weight:600;letter-spacing:.17em;line-height:1.35;text-transform:uppercase}
 h1{max-width:8.4em;margin:0;color:var(--paper);font-family:var(--display);font-size:clamp(3.5rem,5.35vw,5.6rem);font-weight:600;letter-spacing:-.055em;line-height:.99;text-wrap:balance}h1 span{display:block;color:var(--orange)}
 .description{max-width:26em;margin:clamp(1.5rem,3.2vh,2.35rem) 0 0;font-size:clamp(1rem,1.65vw,1.42rem);line-height:1.55;letter-spacing:-.025em;text-wrap:pretty}
-.cta{display:inline-flex;align-items:center;justify-content:space-between;gap:clamp(1.4rem,3vw,2.6rem);min-height:68px;margin-top:clamp(1.8rem,4.1vh,3rem);padding:10px 13px 10px 27px;border:1.5px solid var(--orange-light);border-radius:999px;color:var(--paper);background:rgba(10,7,4,.28);box-shadow:0 0 0 1px rgba(242,138,25,.08),0 0 22px rgba(242,138,25,.17),inset 0 0 16px rgba(242,138,25,.025);font:500 clamp(.95rem,1.45vw,1.22rem)/1.2 var(--sans);text-decoration:none;transition:background .25s ease,box-shadow .25s ease,transform .25s ease}
+.cta{display:inline-flex;align-items:center;justify-content:flex-start;gap:clamp(1rem,2vw,1.5rem);min-height:68px;margin-top:clamp(1.8rem,4.1vh,3rem);padding:10px 13px 10px 27px;border:1.5px solid var(--orange-light);border-radius:999px;color:var(--paper);background:rgba(10,7,4,.28);box-shadow:0 0 0 1px rgba(242,138,25,.08),0 0 22px rgba(242,138,25,.17),inset 0 0 16px rgba(242,138,25,.025);font:500 clamp(.95rem,1.45vw,1.22rem)/1.2 var(--sans);text-decoration:none;transition:background .25s ease,box-shadow .25s ease,transform .25s ease}
 .cta:hover{background:rgba(242,138,25,.1);box-shadow:0 0 28px rgba(242,138,25,.3);transform:translateY(-2px)}.cta:focus-visible{outline:2px solid var(--paper);outline-offset:5px}
 .cta__arrow{display:grid;width:43px;height:43px;flex:0 0 43px;place-items:center;border:1.5px solid var(--orange);border-radius:50%;color:var(--orange);font-size:1.6rem;line-height:1;transition:transform .25s ease,background .25s ease}.cta:hover .cta__arrow{transform:translateX(3px);background:rgba(242,138,25,.12)}
 @media(min-width:1600px){.hero__content{width:min(100% - 12vw,1500px)}h1{font-size:clamp(5.6rem,5.2vw,6.5rem)}}
 @media(max-width:700px){
-.hero{min-height:100svh;align-items:flex-end;background-image:linear-gradient(180deg,rgba(8,6,4,0) 0%,rgba(8,6,4,.02) 24%,rgba(8,6,4,.24) 38%,rgba(8,6,4,.78) 53%,#080604 69%),url("https://i.imgur.com/cRQk8Yi.jpeg");background-position:center top,center top;background-size:100% auto,100% auto;background-repeat:no-repeat;background-color:#080604}
+.hero{min-height:100svh;align-items:flex-end}
+.hero__image{inset:0 auto auto 0;width:100%;height:auto;max-height:none;object-fit:contain;object-position:top center}
+.hero::before{background:linear-gradient(180deg,rgba(8,6,4,0) 0%,rgba(8,6,4,.02) 24%,rgba(8,6,4,.24) 38%,rgba(8,6,4,.78) 53%,#080604 69%)}
 .hero__content{width:100%;margin:0;padding:0 7.2vw clamp(2.7rem,6.3vh,4.2rem);text-align:center}
 .eyebrow{margin-bottom:1.05rem;font-size:clamp(.62rem,2.55vw,.82rem);letter-spacing:.12em}
 h1{max-width:100%;margin-inline:auto;font-size:clamp(3.05rem,9.5vw,4.7rem);line-height:.96;letter-spacing:-.06em}
 .description{max-width:23em;margin:1.35rem auto 0;font-size:clamp(1rem,4.25vw,1.38rem);line-height:1.48}.desktop-break{display:none}
-.cta{display:flex;width:100%;max-width:520px;min-height:66px;margin:1.75rem auto 0;padding:9px 12px 9px 20px;gap:12px;font-size:clamp(.92rem,4vw,1.18rem);text-align:left}
+.cta{display:inline-flex;width:auto;max-width:100%;min-height:62px;margin:1.75rem auto 0;padding:8px 10px 8px 18px;gap:14px;font-size:clamp(.92rem,4vw,1.12rem);text-align:left}
+.cta__arrow{width:41px;height:41px;flex-basis:41px}
 }
-@media(max-width:380px){.hero__content{padding-inline:6vw;padding-bottom:2.25rem}h1{font-size:clamp(2.75rem,9.8vw,3.2rem)}.description{font-size:.98rem}.cta{min-height:60px;padding-left:16px}.cta__arrow{width:39px;height:39px;flex-basis:39px}}
+@media(max-width:380px){.hero__content{padding-inline:6vw;padding-bottom:2.25rem}h1{font-size:clamp(2.75rem,9.8vw,3.2rem)}.description{font-size:.98rem}.cta{min-height:58px;padding-left:14px;gap:10px}.cta__arrow{width:38px;height:38px;flex-basis:38px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
 </style></head>
-<body><main><section class="hero" aria-labelledby="hero-title"><div class="hero__content">
-<p class="eyebrow">Estratégia · Conteúdo · Marca</p><h1 id="hero-title">Sua marca<br>merece ser <span>lembrada.</span></h1>
+<body><main><section class="hero" aria-labelledby="hero-title">
+<img class="hero__image" src="https://i.imgur.com/cRQk8Yi.jpeg" alt="" fetchpriority="high" decoding="async">
+<div class="hero__content"><p class="eyebrow">Estratégia · Conteúdo · Marca</p><h1 id="hero-title">Sua marca<br>merece ser <span>lembrada.</span></h1>
 <p class="description">Conteúdo com intenção<br class="desktop-break"> transforma atenção em conexão.</p>
 <a class="cta" href="#contato" aria-label="Vamos criar sua história"><span>Vamos criar sua história</span><span class="cta__arrow" aria-hidden="true">→</span></a>
 </div></section></main></body></html>
